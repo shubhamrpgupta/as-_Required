@@ -1,0 +1,36 @@
+<% layout("layouts/boilerplate") %>
+
+<h1>All Students</h1>
+
+<% for(let student of showAllStudents) {%>
+<div class="card" style="width: 18rem">
+  <img src="<%=student.gravatar %>" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title"><%=student.name %></h5>
+    <p class="card-text"><%=student.bio %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><%=student.location %></li>
+    <li class="list-group-item"><%=student.techStack %></li>
+    <ul class="list-group list-group-flush">
+      Seeking:
+      <li class="list-group-item"><%=student.seeking[0] %></li>
+      <li class="list-group-item"><%=student.seeking[1] %></li>
+      <li class="list-group-item"><%=student.seeking[2] %></li>
+    </ul>
+    <ul class="list-group list-group-flush">
+      Field Of Interest
+      <li class="list-group-item"><%=student.fieldOfInterest[0] %></li>
+      <li class="list-group-item"><%=student.fieldOfInterest[1] %></li>
+      <li class="list-group-item"><%=student.fieldOfInterest[2] %></li>
+    </ul>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link"><%=student.githubURL %></a>
+    <a href="#" class="card-link"><%=student.twitterURL %></a>
+    <a href="#" class="card-link"><%=student.twitterURL %></a>
+    <a href="#" class="card-link"><%=student.linkedinURL %></a>
+  </div>
+</div>
+
+<% } %>
